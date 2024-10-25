@@ -2,9 +2,9 @@
 require_once(".\layout\header.php");
 require_once("User.php");
 
-$login_message = ""; // Variable für Erfolg- oder Fehlermeldung
+$login_message = "";
 
-// Prüfe, ob das Login-Formular gesendet wurde
+
 if (isset($_POST["email"]) && isset($_POST["password"])) {
     $user = new User();
     $user->email = $_POST["email"];
@@ -21,12 +21,11 @@ if (isset($_POST["email"]) && isset($_POST["password"])) {
 
 <h1>Login</h1>
 
-<!-- Ausgabe der Erfolg- oder Fehlermeldung -->
 <?php if ($login_message !== ""): ?>
     <p><?php echo $login_message; ?></p>
 <?php endif; ?>
 
-<!-- Login-Formular -->
+
 <form method="post">
     <input type="email" name="email" placeholder="Your Email" required maxlength="120"/>
     <br/>
