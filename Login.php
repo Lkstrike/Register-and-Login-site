@@ -10,7 +10,6 @@ if (isset($_POST["email"]) && isset($_POST["password"])) {
     $user->email = $_POST["email"];
     $user->password = $_POST["password"];
 
-    // Versuche, den Benutzer einzuloggen
     if ($user->login()) {
         $login_message = "Login successful!";
     } else {
